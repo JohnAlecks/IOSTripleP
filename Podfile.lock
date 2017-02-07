@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.3.0)
+  - paper-onboarding (2.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - paper-onboarding (~> 2.0.1)
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  paper-onboarding: a8e001214d9ce9decf78e160b3823f396dbd51ac
+
+PODFILE CHECKSUM: b82ef8d6d9840691bef4504586637f101fa20a97
+
+COCOAPODS: 1.1.1

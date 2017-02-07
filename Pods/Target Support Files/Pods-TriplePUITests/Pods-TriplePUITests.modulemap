@@ -1,0 +1,6 @@
+framework module Pods_TriplePUITests {
+  umbrella header "Pods-TriplePUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
