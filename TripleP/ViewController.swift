@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
     @IBAction func Checked(_ sender: UIButton) {
         print(Shared.share.fromLogin)
-    }
+        
+        let parameters: [String: AnyObject] = [
+                "id":Shared.share.fromLogin["id"] as AnyObject,
+                "username": Shared.share.fromLogin["name"] as AnyObject,
+                "email":"yourmother@yourfather.com" as AnyObject
+        ]
+        Alamofire.request("http://api.triplep-backend.dev/v1/users", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON {
+            response in
+            print(response)
+        }
+        
+        }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
