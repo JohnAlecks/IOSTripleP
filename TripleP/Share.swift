@@ -12,4 +12,5 @@ final class Shared {
     static let share = Shared()
     var fromLogin: NSDictionary!
     var fromMain: NSDictionary!
+    var fromPinPopUp: Bool = false
 }

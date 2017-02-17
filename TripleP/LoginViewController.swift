@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func SignInPressed(_ sender: UIButton) {
         var userInfo = [String:String]()
+        userInfo["type"] = "SignIn"
         userInfo["phone"] = phoneText.text
         userInfo["password"] = passwordText.text
         Shared.share.fromLogin = userInfo as NSDictionary!
@@ -31,7 +32,13 @@ class LoginViewController: UIViewController {
         initFacebook()
        
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        guard Shared.share.fromLogin != nil else {
+            return
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -114,10 +121,11 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             }
             else
             {
-                let resultDic = result as? NSDictionary
+                let resultDic = result as? NSMutableDictionary
                 print("\(resultDic)")
                 print("ID: \(resultDic?["id"] as! NSString)")
                 print("Username: \(resultDic?["name"] as! NSString)")
+                resultDic?["type"] = "facebook"
                 Shared.share.fromLogin = resultDic
                 self.dismiss(animated: true, completion: nil)
             }
