@@ -1,13 +1,13 @@
 PODS:
   - Alamofire (4.3.0)
   - ALLoadingView (1.1.2)
-  - GoogleMaps (2.1.1):
-    - GoogleMaps/Maps (= 2.1.1)
-  - GoogleMaps/Base (2.1.1)
-  - GoogleMaps/Maps (2.1.1):
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
     - GoogleMaps/Base
-  - GooglePlaces (2.1.1):
-    - GoogleMaps/Base (= 2.1.1)
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
   - paper-onboarding (2.0.1)
 
 DEPENDENCIES:
@@ -20,8 +20,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   ALLoadingView: 4244d5b7be5f86331b9a730fd906b2eedcb8daa2
-  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
-  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   paper-onboarding: a8e001214d9ce9decf78e160b3823f396dbd51ac
 
 PODFILE CHECKSUM: 0f960ce42d28d5656ea5e4ed2e6739fd576ea836

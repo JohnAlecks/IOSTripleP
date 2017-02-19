@@ -49,11 +49,11 @@ THE SOFTWARE.
 
 ## GoogleMaps
 
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## GooglePlaces
 
-Copyright 2016 Google
+Copyright 2017 Google
 
 ## paper-onboarding
 
