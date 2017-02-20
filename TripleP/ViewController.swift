@@ -10,11 +10,13 @@ import UIKit
 import Alamofire
 import GoogleMaps
 import ALLoadingView
+import InteractiveSideMenu
+
 protocol ViewControllerProtocols: class {
     func pinPoint()
 }
 
-class ViewController: UIViewController {
+class ViewController: MenuContainerViewController {
     
     
     @IBOutlet weak var iSeeButton: UIButton!
@@ -189,9 +191,10 @@ extension ViewController: ViewControllerProtocols {
     func pinPoint() {
         print("you nailed it")
         let policeMarker = GMSMarker()
-        policeMarker.appearAnimation = kGMSMarkerAnimationPop
+        policeMarker.appearAnimation = GMSMarkerAnimation.pop
         policeMarker.position = currentLocation
         policeMarker.title = "Police"
         policeMarker.map = mapView
     }
 }
+

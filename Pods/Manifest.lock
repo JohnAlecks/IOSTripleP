@@ -8,6 +8,7 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.2.0):
     - GoogleMaps/Base (= 2.2.0)
+  - InteractiveSideMenu (1.0)
   - paper-onboarding (2.0.1)
 
 DEPENDENCIES:
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - ALLoadingView
   - GoogleMaps
   - GooglePlaces
+  - InteractiveSideMenu
   - paper-onboarding (~> 2.0.1)
 
 SPEC CHECKSUMS:
@@ -22,8 +24,9 @@ SPEC CHECKSUMS:
   ALLoadingView: 4244d5b7be5f86331b9a730fd906b2eedcb8daa2
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
+  InteractiveSideMenu: 2966af15dee760f6c3e09a7a80a98c09fed3d7a4
   paper-onboarding: a8e001214d9ce9decf78e160b3823f396dbd51ac
 
-PODFILE CHECKSUM: 0f960ce42d28d5656ea5e4ed2e6739fd576ea836
+PODFILE CHECKSUM: a5272ad074d40f207c7184a37d2c33ac397ff005
 
 COCOAPODS: 1.1.1

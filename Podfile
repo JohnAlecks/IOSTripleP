@@ -5,6 +5,7 @@ target 'TripleP' do
    pod 'Alamofire', '~> 4.0'
    pod 'paper-onboarding', '~>2.0.1'
    pod 'ALLoadingView'
+   pod 'InteractiveSideMenu'
    pod 'GoogleMaps'
    pod 'GooglePlaces'
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
