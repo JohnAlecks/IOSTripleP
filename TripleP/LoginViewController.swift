@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import InteractiveSideMenu
 
-class LoginViewController: UIViewController {
+class LoginViewController: MenuItemContentViewController {
 
     @IBOutlet weak var FBLogin: FBSDKLoginButton!
     @IBOutlet weak var signUpButton: UIButton!

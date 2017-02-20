@@ -26,6 +26,8 @@
 		61881A8A1E499D490051B2D0 /* TriplePUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61881A891E499D490051B2D0 /* TriplePUITests.swift */; };
 		61BF88A51E5159AB004695F7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BF88A41E5159AB004695F7 /* SignUpViewController.swift */; };
 		61BF88A71E515D14004695F7 /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BF88A61E515D14004695F7 /* DataTypes.swift */; };
+		61D6D1CD1E5A8E670002DE55 /* NavigationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D6D1CC1E5A8E670002DE55 /* NavigationMenuViewController.swift */; };
+		61D6D1CF1E5AC7B30002DE55 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D6D1CE1E5AC7B30002DE55 /* MapViewController.swift */; };
 		C1BF5F3A763DB74FACC618CF /* Pods_TripleP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537F16E8D2736F04F4E9235C /* Pods_TripleP.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		61881A8B1E499D490051B2D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61BF88A41E5159AB004695F7 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		61BF88A61E515D14004695F7 /* DataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
+		61D6D1CC1E5A8E670002DE55 /* NavigationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewController.swift; sourceTree = "<group>"; };
+		61D6D1CE1E5AC7B30002DE55 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		774838CBAC60E5FC5944DE39 /* Pods-TripleP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleP.release.xcconfig"; path = "Pods/Target Support Files/Pods-TripleP/Pods-TripleP.release.xcconfig"; sourceTree = "<group>"; };
 		AFDC7E885D587F791624FEEB /* Pods-TriplePUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriplePUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TriplePUITests/Pods-TriplePUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6F789CC19C4B857CA663DB9 /* Pods-TriplePTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriplePTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TriplePTests/Pods-TriplePTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				61BF88A41E5159AB004695F7 /* SignUpViewController.swift */,
 				61BF88A61E515D14004695F7 /* DataTypes.swift */,
 				615B09E11E52201C00B5E2B5 /* ISeeViewController.swift */,
+				61D6D1CC1E5A8E670002DE55 /* NavigationMenuViewController.swift */,
+				61D6D1CE1E5AC7B30002DE55 /* MapViewController.swift */,
 			);
 			path = TripleP;
 			sourceTree = "<group>";
@@ -493,7 +499,9 @@
 				61835F661E49A10D006A0684 /* Share.swift in Sources */,
 				615B09E21E52201C00B5E2B5 /* ISeeViewController.swift in Sources */,
 				61881A6C1E499D490051B2D0 /* ViewController.swift in Sources */,
+				61D6D1CF1E5AC7B30002DE55 /* MapViewController.swift in Sources */,
 				61BF88A71E515D14004695F7 /* DataTypes.swift in Sources */,
+				61D6D1CD1E5A8E670002DE55 /* NavigationMenuViewController.swift in Sources */,
 				61881A6A1E499D490051B2D0 /* AppDelegate.swift in Sources */,
 				61BF88A51E5159AB004695F7 /* SignUpViewController.swift in Sources */,
 			);
@@ -646,6 +654,7 @@
 			baseConfigurationReference = 109BCCD3EE8202B5914FED53 /* Pods-TripleP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C4CG46V9YL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -665,6 +674,7 @@
 			baseConfigurationReference = 774838CBAC60E5FC5944DE39 /* Pods-TripleP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C4CG46V9YL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
