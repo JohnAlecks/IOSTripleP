@@ -8,15 +8,16 @@
 
 import UIKit
 import InteractiveSideMenu
+import SkyFloatingLabelTextField
 
 class LoginViewController: MenuItemContentViewController {
-
+    
+    // UI elements and variables
     @IBOutlet weak var FBLogin: FBSDKLoginButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var passwordText: UITextField!
-    @IBOutlet weak var phoneText: UITextField!
-    
+    var passwordText: SkyFloatingLabelTextField! = nil
+    var phoneText: SkyFloatingLabelTextField! = nil
     @IBAction func SignInPressed(_ sender: UIButton) {
         var userInfo = [String:String]()
         userInfo["type"] = "SignIn"
@@ -26,7 +27,9 @@ class LoginViewController: MenuItemContentViewController {
         dismiss(animated: true, completion: nil)
         
     }
-        override func viewDidLoad() {
+    
+    //basic functions
+    override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
         passwordText.delegate = self
@@ -37,24 +40,18 @@ class LoginViewController: MenuItemContentViewController {
         guard Shared.share.fromLogin != nil else {
             return
         }
-        
         self.dismiss(animated: true, completion: nil)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
 }
 
+// MARK: UI functions
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
     func initUI() {
         signInButton.clipsToBounds = true
         signInButton.layer.masksToBounds = true
@@ -70,11 +67,21 @@ extension LoginViewController: UITextFieldDelegate {
         FBLogin.layer.masksToBounds = true
         FBLogin.layer.isOpaque = false
         FBLogin.layer.cornerRadius = 6
-               
+        loadStyle()
+        self.hideKeyboardWhenTappedAround()
     }
+    
+    func loadStyle() {
+        phoneText = Tools.initSkyText(placeHolder: "Enter your phone number", title: "Phone number",keyboardType: UIKeyboardType.phonePad, isSecureContent: false, Rect: CGRect.init(x: 16, y: 208, width: 288, height: 43))
+        passwordText = Tools.initSkyText(placeHolder: "Enter your password", title: "Password", keyboardType: nil, isSecureContent: true, Rect: CGRect.init(x: 16, y: 280, width: 288, height: 43))
+        passwordText.returnKeyType = .done
+        self.view.addSubview(phoneText)
+        self.view.addSubview(passwordText)
+    }
+
 }
 
-
+// MARK: Facebook Implement
 extension LoginViewController: FBSDKLoginButtonDelegate {
     
     func initFacebook() {
@@ -110,29 +117,23 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
         print("Log out")
     }
     
-    func returnUserData()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+    func returnUserData() {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id,name,email"])
         graphRequest.start(completionHandler: { (connection, result, error) -> Void in
             
             if ((error) != nil)
             {
-                // Process error
                 print("Error: \(error)")
             }
             else
             {
-                let resultDic = result as? NSMutableDictionary
-                print("\(resultDic)")
-                print("ID: \(resultDic?["id"] as! NSString)")
-                print("Username: \(resultDic?["name"] as! NSString)")
-                resultDic?["type"] = "facebook"
-                Shared.share.fromLogin = resultDic
+                let resultDic = result as? NSDictionary
+                print("Result: \(resultDic)")
+                let returnDic: NSMutableDictionary = resultDic?.mutableCopy() as! NSMutableDictionary
+                returnDic["type"]="facebook"
+                Shared.share.fromLogin = returnDic
                 self.dismiss(animated: true, completion: nil)
             }
         })
     }
-    
-    
-    
 }

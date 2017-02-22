@@ -10,6 +10,7 @@ PODS:
     - GoogleMaps/Base (= 2.2.0)
   - InteractiveSideMenu (1.0)
   - paper-onboarding (2.0.1)
+  - SkyFloatingLabelTextField (2.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - GooglePlaces
   - InteractiveSideMenu
   - paper-onboarding (~> 2.0.1)
+  - SkyFloatingLabelTextField (~> 2.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
@@ -26,7 +28,8 @@ SPEC CHECKSUMS:
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   InteractiveSideMenu: 2966af15dee760f6c3e09a7a80a98c09fed3d7a4
   paper-onboarding: a8e001214d9ce9decf78e160b3823f396dbd51ac
+  SkyFloatingLabelTextField: 070e749632ffd608d6fd9db3fa488a822524997c
 
-PODFILE CHECKSUM: a5272ad074d40f207c7184a37d2c33ac397ff005
+PODFILE CHECKSUM: 713dd77504fe6d1b45b352ec72bdb33d2add48b5
 
 COCOAPODS: 1.1.1

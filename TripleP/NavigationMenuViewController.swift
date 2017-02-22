@@ -10,55 +10,60 @@ import UIKit
 import InteractiveSideMenu
 
 class NavigationMenuViewController: MenuViewController {
-
+   
+    // UI elements and UI functions
     @IBOutlet weak var userAva: UIImageView!
-    let kItemsCount = 2
-    let kCellReuseIdentifier = "Cell"
-    let cats = ["Map View", "Login View"]
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mapViewIndicator: UIImageView!
+    @IBOutlet weak var view1Indicator: UIImageView!
+  
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            loadStyle()
+        }
     
+}
+
+//MARK: UI Function
+extension NavigationMenuViewController {
+    
+    @IBAction func mapViewPressed(_ sender: Any) {
+        setIndicator(index: 0)
+        
+    }
+    @IBAction func view1Pressed(_ sender: Any) {
+        setIndicator(index: 1)
+    }
+    
+    func setIndicator (index: Int){
+        switch index {
+        case 0:
+            mapViewIndicator.backgroundColor = UIColor.red
+            view1Indicator.backgroundColor = UIColor.clear
+            DispatchQueue.main.async {
+                guard let menuContainerViewController = self.menuContainerViewController else { return }
+                menuContainerViewController.selectContentViewController(menuContainerViewController.contentViewControllers[0])
+                menuContainerViewController.hideMenu()
+            }
+            break
+        case 1:
+            DispatchQueue.main.async {
+                guard let menuContainerViewController = self.menuContainerViewController else { return }
+                menuContainerViewController.selectContentViewController(menuContainerViewController.contentViewControllers[1])
+                menuContainerViewController.hideMenu()
+            }
+            mapViewIndicator.backgroundColor = UIColor.clear
+            view1Indicator.backgroundColor = UIColor.red
+            break
+        default: break
+            // Do nothing
+        }
+        
+    }
     func loadStyle () {
         userAva.clipsToBounds = true
         userAva.layer.borderWidth = 3.0
         userAva.layer.borderColor = UIColor.white.cgColor
         userAva.layer.cornerRadius = 0.5 * userAva.bounds.size.width
     }
-    override func viewDidLoad() {
-            super.viewDidLoad()
-            loadStyle() 
-            tableView.delegate = self
-            tableView.dataSource = self
-            tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UITableViewScrollPosition.none)
-        }
 }
-
-
-    extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSource {
-        func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        }
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return kItemsCount
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: kCellReuseIdentifier, for: indexPath) as UITableViewCell
-            cell.textLabel?.text = cats[indexPath.row]
-            
-            return cell
-        }
-        
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            DispatchQueue.main.async {
-                guard let menuContainerViewController = self.menuContainerViewController else { return }
-                menuContainerViewController.selectContentViewController(menuContainerViewController.contentViewControllers[indexPath.row])
-                menuContainerViewController.hideMenu()
-            }
-        }
-        
-    }
-
-
-
-
