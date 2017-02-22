@@ -12,7 +12,18 @@ import GoogleMaps
 import ALLoadingView
 import InteractiveSideMenu
 
-class MapViewController: MenuItemContentViewController {
+protocol ViewControllerProtocols: class {
+    func pinPoint()
+}
+
+
+class MapViewController: MenuItemContentViewController, ViewControllerProtocols {
+    internal func pinPoint() {
+        let pin = GMSMarker.init(position: currentLocation)
+        pin.appearAnimation = GMSMarkerAnimation.pop
+        pin.map = mapView
+    }
+
     
     // Variables
     
@@ -73,14 +84,24 @@ extension MapViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        if getCurrentLocation() {
+            LoadMapView()
+            loadButtonStyle()
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "popUp" {
+                let isee = segue.destination as! ISeeViewController
+                isee.delegate = self
+            }
+    }
+
 
 }
 

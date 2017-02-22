@@ -4,6 +4,7 @@
 target 'TripleP' do
    pod 'Alamofire', '~> 4.0'
    pod 'paper-onboarding', '~>2.0.1'
+   pod 'SkyFloatingLabelTextField', '~> 2.0.0'
    pod 'ALLoadingView'
    pod 'InteractiveSideMenu'
    pod 'GoogleMaps'

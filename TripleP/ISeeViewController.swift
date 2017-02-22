@@ -9,23 +9,24 @@
 import UIKit
 
 class ISeeViewController: UIViewController {
+    // variable
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var policeButton: UIButton!
+  
+    
     var delegate: ViewControllerProtocols?
-    @IBAction func closePressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
-        loadStyle()
-        // Do any additional setup after loading the view.
+        loadStyle()       
     }
+}
+
+extension ISeeViewController {
     @IBAction func PolicePressed(_ sender: UIButton) {
-        self.delegate?.pinPoint()  
+        self.delegate?.pinPoint()
         dismiss(animated: true, completion: nil)
     }
-    
     func loadStyle() {
         closeButton.clipsToBounds = true
         policeButton.clipsToBounds = true
@@ -34,5 +35,9 @@ class ISeeViewController: UIViewController {
         popUpView.layer.cornerRadius = 20
         policeButton.layer.cornerRadius = 16
     }
- 
+    @IBAction func closePressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+
 }
